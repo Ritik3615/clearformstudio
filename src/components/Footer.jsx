@@ -91,7 +91,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
               >
                 <Mail size={16} />
-                <span>clearformstudio3@gmail.com</span>
+                <span>clearformstudio.office@gmail.com</span>
               </a>
 
               <a

@@ -17,20 +17,20 @@ export default function ContactPage() {
           <ContactCard
             icon={Mail}
             title="Email"
-            value="clearformstudio3@gmail.com"
-            link="mailto:clearformstudio3@gmail.com"
+            value="clearformstudio.office@gmail.com"
+            link="mailto:clearformstudio.office@gmail.com"
           />
           <ContactCard
             icon={Phone}
             title="Phone"
-            value="+91 7338493036"
-            link="tel:+917338493036"
+            value="+91 7338495036"
+            link="tel:+917338495036"
           />
           <ContactCard
             icon={MessageSquare}
             title="WhatsApp"
             value="Chat with us"
-            link="https://wa.me/917338493036"
+            link="https://wa.me/917338495036"
           />
         </div>
 

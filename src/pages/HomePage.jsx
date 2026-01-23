@@ -52,12 +52,11 @@ export default function HomePage() {
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-6xl mx-auto px-6">
             <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-              Win More Marks. <br /> Close More Clients.
+              Win Clients with Powerful Presentations.
             </h1>
 
             <p className="text-xl text-white/80 max-w-2xl mb-10">
-              High-impact presentations, proposals, and visuals for students,
-              architects, interior designers, and builders.
+              We design pitch decks and proposals that help architects, designers, and businesses close deals faster.
             </p>
 
             <div className="flex gap-4">

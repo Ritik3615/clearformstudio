@@ -52,12 +52,12 @@ export default function HomePage() {
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-6xl mx-auto px-6">
             <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-              Win More Marks. <br /> Close More Clients.
+              Win Clients with Powerful Presentations.
             </h1>
 
             <p className="text-xl text-white/80 max-w-2xl mb-10">
-              High-impact presentations, proposals, and visuals for students,
-              architects, interior designers, and builders.
+              We design pitch decks and proposals that help architects,
+              designers, and businesses close deals faster.
             </p>
 
             <div className="flex gap-4">
@@ -255,14 +255,19 @@ export default function HomePage() {
       </section>
 
       {/* ================= PROCESS ================= */}
-      {/* <section className="py-24 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-16">
             Simple Process
           </h2>
 
           <div className="grid md:grid-cols-4 gap-8">
-            {["Discuss", "Design", "Refine", "Deliver"].map((s, i) => (
+            {[
+              "Share requirements",
+              "We design structure & visuals",
+              "Revisions",
+              "Final delivery"
+            ].map((s, i) => (
               <div key={i}>
                 <div className="text-2xl font-bold text-blue-600 mb-2">
                   0{i + 1}
@@ -272,13 +277,56 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
+
+      {/* ================= STRONG CTA ================= */}
+      <section className="py-24 bg-blue-50">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+            Want a professional presentation?
+          </h2>
+          <p className="text-xl text-slate-600 mb-12">
+            Let's discuss your project.
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition"
+            >
+              💬 WhatsApp
+            </a>
+            <a
+              href="mailto:hello@clearform.com"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition"
+            >
+              ✉️ Email
+            </a>
+            <a
+              href="#"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold transition"
+              onClick={() => {
+                // Calendly integration will be added later
+                alert("Calendly integration coming soon!");
+              }}
+            >
+              📅 Book Call
+            </a>
+          </div>
+          
+          <p className="text-sm text-slate-500 italic">
+            Foreign clients prefer direct calls? We're here for that.
+          </p>
+        </div>
+      </section>
 
       {/* ================= CONTACT ================= */}
       <section id="contact" className="py-24 bg-slate-50">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl font-extrabold mb-6 text-center">
-            Discuss Your Requirement
+            Or share details via form
           </h2>
           <ContactFormComponent />
         </div>

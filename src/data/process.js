@@ -28,8 +28,8 @@ export const stepsData = [
 ];
 
 export const timeline = [
-  { time: '24 hrs', desc: 'Initial Consultation' },
-  { time: '48 hrs', desc: 'First Draft Ready' },
-  { time: '72 hrs', desc: 'Revisions Complete' },
-  { time: '24 hrs after approval', desc: 'Final Delivery' },
+  { time: 'Same day', desc: 'Initial Consultation' },
+  { time: '24 hrs', desc: 'First Draft Ready' },
+  { time: '24 hrs', desc: 'Revisions Complete' },
+  { time: 'Next day', desc: 'Final Delivery' },
 ];

@@ -64,7 +64,7 @@ export default function Navbar() {
         {/* MOBILE MENU */}
         {isOpen && (
           <div className="md:hidden mt-4 rounded-2xl bg-white/80 backdrop-blur-xl shadow-xl border border-white/40 p-4 space-y-2">
-            {['Home', 'Services', 'Process', 'For', 'Contact'].map((item) => (
+            {['Home', 'Services', 'Process', 'samples', 'Contact'].map((item) => (
               <Link
                 key={item}
                 to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}

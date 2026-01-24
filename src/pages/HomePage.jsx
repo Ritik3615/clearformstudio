@@ -291,7 +291,7 @@ export default function HomePage() {
           
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/917338495036"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition"
@@ -299,7 +299,7 @@ export default function HomePage() {
               💬 WhatsApp
             </a>
             <a
-              href="mailto:hello@clearform.com"
+              href="clearformstudio.office@gmail.com"
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition"
             >
               ✉️ Email

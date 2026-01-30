@@ -19,12 +19,12 @@ export default function Navbar() {
 
           {/* LOGO */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white font-bold flex items-center justify-center text-lg shadow-lg group-hover:scale-105 transition-transform">
-              CF
+            <div className="w-11 h-11 rounded-xl flex items-center justify-center text-lg shadow-lg group-hover:scale-105 transition-transform">
+              <img src="/clearformlogo.svg" alt="img" />
             </div>
             <div className="hidden sm:flex flex-col leading-none">
-              <span className="font-bold text-slate-900">Clearform</span>
-              <span className="text-xs font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="font-bold text-yellow-500">Clearform</span>
+              <span className="text-xs font-semibold bg-gradient-to-r from-blue-600 to-slate-600 bg-clip-text text-transparent">
                 Studio
               </span>
             </div>

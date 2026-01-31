@@ -87,11 +87,11 @@ export default function Footer() {
             <div className="space-y-4 text-sm">
 
               <a
-                href="mailto:clearformstudio3@gmail.com"
+                href="mailto:contact@clearformstudio.in"
                 className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
               >
                 <Mail size={16} />
-                <span>clearformstudio.office@gmail.com</span>
+                <span>contact@clearformstudio.in</span>
               </a>
 
               <a

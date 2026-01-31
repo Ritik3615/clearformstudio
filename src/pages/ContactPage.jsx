@@ -17,8 +17,8 @@ export default function ContactPage() {
           <ContactCard
             icon={Mail}
             title="Email"
-            value="clearformstudio.office@gmail.com"
-            link="mailto:clearformstudio.office@gmail.com"
+            value="contact@clearformstudio.in"
+            link="mailto:contact@clearformstudio.in"
           />
           <ContactCard
             icon={Phone}

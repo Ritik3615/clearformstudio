@@ -1,4 +1,5 @@
 import { Mail, Phone, MessageCircle, ArrowRight } from "lucide-react";
+import companyLogo from "/clearformlogo.svg"; // Replace with your actual logo path
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -31,8 +32,10 @@ export default function Footer() {
           {/* BRAND */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 flex items-center justify-center shadow-lg">
-                <span className="text-lg font-bold text-white">CF</span>
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center shadow-lg">
+                <span className="text-lg font-bold text-white">
+                  <img src={companyLogo} alt="Clearform Studio Logo" className="w-full h-full object-contain" />
+                </span>
               </div>
               <span className="text-xl font-bold">Clearform Studio</span>
             </div>

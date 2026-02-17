@@ -1,158 +1,79 @@
 import React from "react";
 import PageHeader from "../components/layout/PageHeader";
-import AudienceCard from "../components/cards/AudienceCard";
-import { audiencesData } from "../data/audiences";
+import { FileText, ExternalLink, GraduationCap, Building2, Paintbrush, Rocket, HardHat } from "lucide-react"; // Recommended icon library
 import proposalPdf from "../assets/business  proposal 1.pdf";
 import profilePdf1 from "../assets/Steadwin group profle.pdf.pdf";
 import profilePdf2 from "../assets/steadwin profile RAILING (1).pdf";
 import templatePdf from "../assets/template1.pdf";
 
+const projects = [
+  { title: "Business Proposal", desc: "Structured deck for scope, pricing, and value.", link: proposalPdf, type: "PDF" },
+  { title: "Steadwin Group Profile", desc: "Professional company profile for introductions.", link: profilePdf1, type: "PDF" },
+  { title: "Railing System Profile", desc: "Focused specs and features for potential clients.", link: profilePdf2, type: "PDF" },
+  { title: "Proposal Template", desc: "Reusable system for consistent client branding.", link: templatePdf, type: "PDF" },
+  { title: "Steadwin Website", desc: "Clean, focused presentation of company services.", link: "https://steadwin.in", type: "Web" },
+];
+
+const industries = [
+  { name: "Students & Academic", icon: <GraduationCap size={20} /> },
+  { name: "Interior Design", icon: <Paintbrush size={20} /> },
+  { name: "Architecture Firms", icon: <Building2 size={20} /> },
+  { name: "Builders & Developers", icon: <HardHat size={20} /> },
+  { name: "Startups & Business", icon: <Rocket size={20} /> },
+];
+
 export default function AudiencePage() {
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <PageHeader
-          title="Who We Help"
-          subtitle="Tailored solutions for students, designers, architects, and businesses"
+    <div className="min-h-screen pt-32 pb-24 bg-[#fcfcfc]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <PageHeader 
+          title="Selected Work" 
+          subtitle="Examples of communication systems we've built to win decisions." 
         />
 
-        {/* Project Section */}
-        <div className="mt-12 bg-gray-50 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Projects</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Proposal Section */}
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">Proposal</h3>
-              <div className="space-y-3">
-                {/* Business Proposal 1 */}
-                <div>
-                  <p className="text-sm text-gray-700 font-medium mb-2">Business Proposal 1</p>
-                  <div className="flex gap-2">
-                    <a 
-                      href={proposalPdf} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors"
-                    >
-                      👁️ View
-                    </a>
-                    <a 
-                      href={proposalPdf} 
-                      download
-                      className="flex-1 inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors"
-                    >
-                      ⬇️ Download
-                    </a>
-                  </div>
-                </div>
-
-                {/* Template 1 */}
-                <div>
-                  <p className="text-sm text-gray-700 font-medium mb-2">Template 1</p>
-                  <div className="flex gap-2">
-                    <a 
-                      href={templatePdf} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors"
-                    >
-                      👁️ View
-                    </a>
-                    <a 
-                      href={templatePdf} 
-                      download
-                      className="flex-1 inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors"
-                    >
-                      ⬇️ Download
-                    </a>
-                  </div>
-                </div>
+        {/* PROJECTS GRID */}
+        <section className="py-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, i) => (
+            <div key={i} className="group bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-400 transition-all flex flex-col justify-between shadow-sm hover:shadow-md">
+              <div>
+                <span className="text-xs font-bold tracking-widest uppercase text-slate-400 mb-4 block">
+                  {project.type} Project
+                </span>
+                <h3 className="text-2xl font-semibold text-slate-900 mb-3">{project.title}</h3>
+                <p className="text-slate-600 leading-relaxed mb-8">{project.desc}</p>
               </div>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-slate-900 font-bold group-hover:gap-3 transition-all"
+              >
+                {project.type === "Web" ? "Visit Website" : "View Document"}
+                {project.type === "Web" ? <ExternalLink size={18} /> : <FileText size={18} />}
+              </a>
             </div>
+          ))}
+        </section>
 
-            {/* Profile PDF Section */}
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">Profile PDF</h3>
-              <div className="space-y-3">
-                {/* Steadwin Group Profile */}
-                <div>
-                  <p className="text-sm text-gray-700 font-medium mb-2">Steadwin Group Profile</p>
-                  <div className="flex gap-2">
-                    <a 
-                      href={profilePdf1} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors"
-                    >
-                      👁️ View
-                    </a>
-                    <a 
-                      href={profilePdf1} 
-                      download
-                      className="flex-1 inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors"
-                    >
-                      ⬇️ Download
-                    </a>
-                  </div>
-                </div>
-
-                {/* Steadwin Profile - Railing */}
-                <div>
-                  <p className="text-sm text-gray-700 font-medium mb-2">Steadwin Profile - Railing</p>
-                  <div className="flex gap-2">
-                    <a 
-                      href={profilePdf2} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors"
-                    >
-                      👁️ View
-                    </a>
-                    <a 
-                      href={profilePdf2} 
-                      download
-                      className="flex-1 inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors"
-                    >
-                      ⬇️ Download
-                    </a>
-                  </div>
-                </div>
-              </div>
+        {/* REFINED WHO WE WORK WITH */}
+        <section className="py-16 bg-slate-900 rounded-[2.5rem] px-8 md:px-16 text-white overflow-hidden relative">
+          <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">Who We Work With</h2>
+              <p className="text-slate-400 text-lg">Different industries, same goal — clear communication that helps win decisions.</p>
             </div>
-
-            {/* Website Section */}
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">Website</h3>
-              <div className="space-y-3">
-                {/* Steadwin.in */}
-                <div>
-                  <p className="text-sm text-gray-700 font-medium mb-2">Steadwin.in</p>
-                  <a 
-                    href="https://steadwin.in" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors"
-                  >
-                    🌐 Visit Website
-                  </a>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {industries.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                  <div className="text-blue-400">{item.icon}</div>
+                  <span className="font-medium text-slate-200">{item.name}</span>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mt-12">
-          {audiencesData.map((audience, index) => (
-            <AudienceCard
-              key={index}
-              Icon={audience.icon}
-              title={audience.title}
-              color={audience.color}
-              problems={audience.problems}
-              solutions={audience.solutions}
-            />
-          ))}
-        </div>
+          {/* Subtle background glow */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px]" />
+        </section>
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ export default function ContactFormComponent() {
         JSON.stringify(submissions)
       );
 
-      toast.success("Thanks! We'll contact you within 24 hours.");
+      toast.success("Thanks! We'll get back to you within one business day.");
 
       setFormData({
         name: "",
@@ -60,7 +60,7 @@ export default function ContactFormComponent() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 bg-white p-8 rounded-2xl shadow-lg border border-slate-200"
+      className="space-y-6 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm"
     >
       {/* NAME + EMAIL */}
       <div className="grid md:grid-cols-2 gap-6">
@@ -106,7 +106,7 @@ export default function ContactFormComponent() {
           id="phone"
           name="phone"
           type="tel"
-          placeholder="+91 XXXXX XXXXX"
+          placeholder="+1 555 123 4567"
           value={formData.phone}
           onChange={handleChange}
           required
@@ -117,7 +117,7 @@ export default function ContactFormComponent() {
       {/* CATEGORY */}
       <div className="space-y-2">
         <Label htmlFor="category" className="text-slate-800 font-medium">
-          What Do You Need? *
+          What do you need? *
         </Label>
         <Select
           value={formData.category}
@@ -129,12 +129,21 @@ export default function ContactFormComponent() {
             <SelectValue placeholder="Select a service" />
           </SelectTrigger>
           <SelectContent className="bg-white text-slate-900 border-slate-300">
-            <SelectItem value="presentation">Presentation Design</SelectItem>
-            <SelectItem value="proposal">Project Proposal</SelectItem>
-            <SelectItem value="poster">Poster & Creative</SelectItem>
-            <SelectItem value="brochure">Brochure & PDF</SelectItem>
-            <SelectItem value="website">Website Design</SelectItem>
-            <SelectItem value="other">Other</SelectItem>
+            <SelectItem value="proposal">
+              Client Proposal Presentation
+            </SelectItem>
+            <SelectItem value="pitch">
+              Investor / Pitch Deck
+            </SelectItem>
+            <SelectItem value="sales">
+              Sales Presentation
+            </SelectItem>
+            <SelectItem value="academic">
+              Academic Presentation
+            </SelectItem>
+            <SelectItem value="unsure">
+              Not sure yet
+            </SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -147,7 +156,7 @@ export default function ContactFormComponent() {
         <Textarea
           id="requirements"
           name="requirements"
-          placeholder="Describe your project..."
+          placeholder="Briefly describe your project, timeline, and goals."
           value={formData.requirements}
           onChange={handleChange}
           required
@@ -160,14 +169,14 @@ export default function ContactFormComponent() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 text-lg font-semibold rounded-lg shadow-md hover:shadow-xl transition-all disabled:opacity-50 flex items-center justify-center"
+        className="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 text-lg font-semibold rounded-lg transition disabled:opacity-50 flex items-center justify-center"
       >
         <Send className="mr-2" size={20} />
-        {isSubmitting ? "Sending..." : "Send Message"}
+        {isSubmitting ? "Submitting..." : "Submit Project Details"}
       </button>
 
       <p className="text-center text-slate-500 text-sm">
-        We usually reply within 24 hours.
+        We typically respond within one business day.
       </p>
     </form>
   );

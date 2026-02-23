@@ -1,5 +1,5 @@
 // Layout Components
-export { default as PageHeader } from './layout/PageHeader';
+// (previously exported PageHeader; now headers are custom per page)
 
 // Card Components
 export { default as ServiceCard } from './cards/ServiceCard';

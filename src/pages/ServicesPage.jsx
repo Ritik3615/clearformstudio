@@ -1,127 +1,174 @@
 import React from "react";
-import PageHeader from "../components/layout/PageHeader";
 import ContactFormComponent from "../components/forms/ContactForm";
 
 export default function ServicesPage() {
+  const services = [
+    {
+      title: "Sales Proposal Kits",
+      desc: "Structured decks that clearly explain scope, pricing, and value — built to win client decisions.",
+      points: [
+        "Proposal presentation deck",
+        "Scope & process breakdown",
+        "Pricing explanation structure",
+      ],
+    },
+    {
+      title: "Client Closing Decks",
+      desc: "Professional sales presentations designed to build trust and accelerate deal closures.",
+      points: [
+        "Value-driven slide structure",
+        "Brand-aligned design",
+        "Clear persuasion flow",
+      ],
+    },
+    {
+      title: "Project Explanation Systems",
+      desc: "Structured communication systems that simplify complex projects for clients and stakeholders.",
+      points: [
+        "Process clarity visuals",
+        "Execution roadmap",
+        "Decision-focused narrative",
+      ],
+    },
+    {
+      title: "Investor & Growth Pitch Structures",
+      desc: "Clean, persuasive pitch decks that communicate your business model with confidence.",
+      points: [
+        "Investor-ready pitch deck",
+        "Business narrative structure",
+        "Scalable design system",
+      ],
+    },
+    {
+      title: "Web Application Presentation Sites",
+      desc: "Focused web experiences designed to present proposals, services, or investment cases clearly.",
+      points: [
+        "Landing-style proposal websites",
+        "Structured communication flow",
+        "Clean professional UI",
+      ],
+    },
+  ];
+
   return (
-    <div className="min-h-screen pt-28 pb-10 bg-white">
-      {/* HERO */}
-      <section className="mx-auto px-4 sm:px-6 lg:px-8 mb-28">
-        <PageHeader
-          title="Strategic Presentation & Proposal Services"
-          subtitle="Clear, persuasive presentations designed to help you win clients, approvals, and investors."
-        />
-      </section>
-      <section className="py-10 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-2xl mb-20">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
-              Core Services
+    <div className="relative min-h-screen pt-28 pb-20 text-white overflow-hidden">
+
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#020617]" />
+      <div className="absolute top-[-120px] left-[-120px] w-[400px] h-[400px] bg-blue-600/20 rounded-full blur-[140px]" />
+      <div className="absolute bottom-[-150px] right-[-120px] w-[450px] h-[450px] bg-purple-600/20 rounded-full blur-[160px]" />
+
+      <div className="relative max-w-6xl mx-auto px-6">
+
+        {/* HERO */}
+        <div className="text-center mb-24">
+          <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-6">
+            Strategic Presentation Systems
+          </h1>
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+            Clear, persuasive communication systems designed to help you win approvals, clients, and investors.
+          </p>
+        </div>
+
+        {/* WHY THIS MATTERS */}
+        <section className="border-t border-gray-800 pt-20 mb-28">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Clarity Creates Confidence in Every Decision
             </h2>
-            <p className="text-xl text-slate-600">
-              Focused presentation solutions built for real decisions, not just
-              visuals.
+
+            <p className="text-gray-400 text-lg leading-relaxed mb-6">
+              Great ideas fail when they are not presented clearly.
+              Clients compare on price. Investors hesitate.
+              Decision-makers delay approvals.
+            </p>
+
+            <p className="text-gray-400 text-lg leading-relaxed">
+              We don’t just design slides. We build structured communication systems
+              that increase clarity, confidence, and closing probability.
+            </p>
+          </div>
+        </section>
+
+        {/* SERVICES */}
+        <section className="space-y-20 mb-28">
+          {services.map((service, i) => (
+            <div
+              key={i}
+              className="grid md:grid-cols-3 gap-10 border-l border-gray-700 pl-10"
+            >
+              <div>
+                <h3 className="text-2xl font-semibold text-white mb-4">
+                  {service.title}
+                </h3>
+              </div>
+
+              <div>
+                <p className="text-gray-400 leading-relaxed text-lg">
+                  {service.desc}
+                </p>
+              </div>
+
+              <div>
+                <ul className="space-y-2 text-gray-400">
+                  {service.points.map((point, idx) => (
+                    <li key={idx}>• {point}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* DIFFERENTIATION */}
+        <section className="border-t border-gray-800 pt-20 mb-28">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              What Makes Our Systems Different
+            </h2>
+            <p className="text-gray-400">
+              Built for real decisions — not just visual appeal.
             </p>
           </div>
 
-          <div className="space-y-10">
-            {/* Service 1 */}
-            <div className="group grid md:grid-cols-3 gap-8 border border-slate-200 rounded-2xl p-10 bg-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div className="relative">
-                <div className="absolute -left-4 top-1 h-8 w-1 bg-blue-600 opacity-0 group-hover:opacity-100 transition" />
-                <h3 className="text-2xl font-semibold text-slate-900">
-                  Client Proposal Presentations
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              {
+                title: "Decision-Focused Structure",
+                desc: "Every presentation is designed around one goal — helping someone say yes.",
+              },
+              {
+                title: "Strategic Narrative Flow",
+                desc: "We structure content in a logical sequence that reduces confusion and builds trust.",
+              },
+              {
+                title: "Clarity Over Decoration",
+                desc: "No unnecessary visual noise. Clean systems built for understanding.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-gray-800/70 backdrop-blur-sm border border-gray-700 p-8 rounded-2xl"
+              >
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  {item.title}
                 </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
-
-              <p className="text-lg text-slate-600">
-                Structured proposal decks that help architects and designers
-                explain scope, pricing, and value clearly during client
-                meetings.
-              </p>
-
-              <ul className="space-y-2 text-slate-700">
-                <li>• Proposal presentation deck</li>
-                <li>• Scope and process visuals</li>
-                <li>• Pricing explanation structure</li>
-              </ul>
-            </div>
-
-            {/* Service 2 */}
-            <div className="group grid md:grid-cols-3 gap-8 border border-slate-200 rounded-2xl p-10 bg-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div className="relative">
-                <div className="absolute -left-4 top-1 h-8 w-1 bg-blue-600 opacity-0 group-hover:opacity-100 transition" />
-                <h3 className="text-2xl font-semibold text-slate-900">
-                  Investor & Pitch Decks
-                </h3>
-              </div>
-
-              <p className="text-lg text-slate-600">
-                Clear, persuasive pitch decks designed to communicate your
-                business model and attract funding.
-              </p>
-
-              <ul className="space-y-2 text-slate-700">
-                <li>• Investor-ready pitch deck</li>
-                <li>• Structured business narrative</li>
-                <li>• Clean, professional visual design</li>
-              </ul>
-            </div>
-
-            {/* Service 3 */}
-            <div className="group grid md:grid-cols-3 gap-8 border border-slate-200 rounded-2xl p-10 bg-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div className="relative">
-                <div className="absolute -left-4 top-1 h-8 w-1 bg-blue-600 opacity-0 group-hover:opacity-100 transition" />
-                <h3 className="text-2xl font-semibold text-slate-900">
-                  Sales Presentations
-                </h3>
-              </div>
-
-              <p className="text-lg text-slate-600">
-                Professional sales decks used by builders and businesses to
-                build trust and close deals.
-              </p>
-
-              <ul className="space-y-2 text-slate-700">
-                <li>• Sales presentation deck</li>
-                <li>• Value-focused slide structure</li>
-                <li>• Consistent brand-aligned design</li>
-              </ul>
-            </div>
-            {/* Service 4 */}
-            <div className="group grid md:grid-cols-3 gap-8 border border-slate-200 rounded-2xl p-10 bg-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div className="relative">
-                <div className="absolute -left-4 top-1 h-8 w-1 bg-blue-600 opacity-0 group-hover:opacity-100 transition" />
-                <h3 className="text-2xl font-semibold text-slate-900">
-                  Presentation Websites
-                </h3>
-              </div>
-
-              <p className="text-lg text-slate-600">
-                Clean, focused websites built to present your proposal, service,
-                or pitch in a clear and persuasive format.
-              </p>
-
-              <ul className="space-y-2 text-slate-700">
-                <li>• Proposal or pitch landing page</li>
-                <li>• Structured communication flow</li>
-                <li>• Clean, professional layout</li>
-              </ul>
-            </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* PROCESS */}
-      <section className="py-28 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
+        {/* PROCESS */}
+        <section className="border-t border-gray-800 pt-20 mb-28">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-white mb-4">
               Our Process
             </h2>
-            <p className="text-xl text-slate-600">
-              A clear workflow designed to turn your ideas into decision-ready
-              presentations.
+            <p className="text-gray-400">
+              A focused workflow built for clarity and speed.
             </p>
           </div>
 
@@ -130,53 +177,73 @@ export default function ServicesPage() {
               {
                 step: "01",
                 title: "Understand the Goal",
-                desc: "We identify the audience and the decision your presentation needs to drive.",
+                desc: "Identify the audience and the decision you need to win.",
               },
               {
                 step: "02",
                 title: "Structure the Message",
-                desc: "Your content is organized into a clear, logical narrative.",
+                desc: "Organize content into a clear narrative flow.",
               },
               {
                 step: "03",
-                title: "Design the Presentation",
-                desc: "We create clean, professional visuals that support the message.",
+                title: "Design the System",
+                desc: "Build professional visuals that support persuasion.",
               },
               {
                 step: "04",
                 title: "Deliver Ready Files",
-                desc: "You receive a polished presentation ready for meetings or submissions.",
+                desc: "Polished, presentation-ready output.",
               },
             ].map((item, i) => (
-              <div key={i} className="text-left">
-                <div className="text-blue-600 text-sm font-semibold mb-3">
+              <div key={i}>
+                <div className="text-blue-400 font-semibold mb-3">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                <h3 className="text-lg font-semibold text-white mb-3">
                   {item.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CONTACT */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Tell Us About Your Project
-          </h2>
-          <p className="text-slate-600 mb-12 text-lg">
-            Share a few details and we’ll get back with the next steps.
-          </p>
+        {/* OUTCOMES */}
+        <section className="border-t border-gray-800 pt-20 mb-28">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              What You Get
+            </h2>
 
-          <div className="bg-white border border-slate-200 rounded-2xl p-10 shadow-sm">
+            <ul className="space-y-4 text-gray-400 text-lg">
+              <li>• Clearer client conversations</li>
+              <li>• Faster approvals</li>
+              <li>• Stronger pricing justification</li>
+              <li>• Higher confidence during presentations</li>
+              <li>• Structured reusable communication systems</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section className="border-t border-gray-800 pt-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Tell Us About Your Project
+            </h2>
+            <p className="text-gray-400">
+              Share details and we’ll respond with next steps.
+            </p>
+          </div>
+
+          <div className="bg-gray-800/70 backdrop-blur-sm border border-gray-700 rounded-2xl p-10">
             <ContactFormComponent />
           </div>
-        </div>
-      </section>
+        </section>
+
+      </div>
     </div>
   );
 }

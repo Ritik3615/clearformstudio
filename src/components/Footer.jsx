@@ -1,107 +1,116 @@
 import { Mail, Phone, MessageCircle, ArrowRight } from "lucide-react";
-import companyLogo from "/clearformlogo.svg"; // Replace with your actual logo path
+import companyLogo from "/clearformlogo.svg";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-white pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative text-white pt-24 pb-12 overflow-hidden">
 
-        {/* TOP CTA STRIP */}
-        {/* <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl p-8 mb-16 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-2xl font-bold mb-2">
-              Need a powerful presentation?
-            </h3>
-            <p className="text-white/80 text-sm">
-              Let’s design something that actually wins.
-            </p>
-          </div>
-          <a
-            href="#contact-form"
-            className="bg-white text-slate-900 px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-slate-100 transition-all"
-          >
-            Get Started <ArrowRight size={18} />
-          </a>
-        </div> */}
+      {/* Background (Studio Style) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#020617]" />
+      <div className="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] bg-blue-600/20 rounded-full blur-[140px]" />
+      <div className="absolute bottom-[-150px] right-[-120px] w-[400px] h-[400px] bg-purple-600/20 rounded-full blur-[160px]" />
 
-        {/* MAIN FOOTER GRID */}
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+      <div className="relative max-w-7xl mx-auto px-6">
+
+        {/* MAIN GRID */}
+        <div className="grid md:grid-cols-4 gap-14 mb-16">
 
           {/* BRAND */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-lg font-bold text-white">
-                  <img src={companyLogo} alt="Clearform Studio Logo" className="w-full h-full object-contain" />
-                </span>
+            <div className="flex items-center space-x-3 mb-5">
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10">
+                <img
+                  src={companyLogo}
+                  alt="Clearform Studio Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <span className="text-xl font-bold">Clearform Studio</span>
+              <span className="text-xl font-semibold text-white">
+                Clearform Studio
+              </span>
             </div>
 
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              High-impact presentations and digital solutions for students, designers, architects, and businesses.
+            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+              Structured presentation systems and digital experiences
+              built to help professionals communicate with clarity and confidence.
             </p>
           </div>
 
           {/* SERVICES */}
           <div>
-            <h3 className="font-semibold mb-4 text-white text-lg">Services</h3>
-            <ul className="space-y-3 text-slate-400 text-sm">
-              {["Presentations", "Pitch Decks", "Posters & Creatives", "Brochures & PDFs", "Websites"].map(
-                (item, i) => (
-                  <li key={i}>
-                    <a
-                      href="#"
-                      className="group flex items-center gap-2 hover:text-blue-400 transition-colors"
-                    >
-                      {item}
-                      <ArrowRight
-                        size={14}
-                        className="opacity-0 group-hover:opacity-100 transition-all"
-                      />
-                    </a>
-                  </li>
-                )
-              )}
+            <h3 className="font-semibold mb-5 text-blue-400 text-sm uppercase tracking-wider">
+              Services
+            </h3>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              {[
+                "Sales Proposal Kits",
+                "Client Closing Decks",
+                "Pitch Structures",
+                "Presentation Websites",
+              ].map((item, i) => (
+                <li key={i}>
+                  <a
+                    href="#"
+                    className="group flex items-center gap-2 hover:text-white transition"
+                  >
+                    {item}
+                    <ArrowRight
+                      size={14}
+                      className="opacity-0 group-hover:opacity-100 transition"
+                    />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* TARGET AUDIENCE */}
+          {/* WHO WE SERVE */}
           <div>
-            <h3 className="font-semibold mb-4 text-white text-lg">We Work With</h3>
-            <ul className="space-y-3 text-slate-400 text-sm">
-              {["Students", "Interior Designers", "Architects", "Builders"].map(
-                (item, i) => (
-                  <li key={i}>
-                    <a href="#" className="hover:text-blue-400 transition-colors">
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+            <h3 className="font-semibold mb-5 text-blue-400 text-sm uppercase tracking-wider">
+              We Work With
+            </h3>
+            <ul className="space-y-3 text-gray-400 text-sm">
+              {[
+                "Students",
+                "Interior Designers",
+                "Architects",
+                "Builders & Developers",
+              ].map((item, i) => (
+                <li key={i}>
+                  <a
+                    href="#"
+                    className="hover:text-white transition"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* CONTACT */}
           <div>
-            <h3 className="font-semibold mb-4 text-white text-lg">Contact</h3>
+            <h3 className="font-semibold mb-5 text-blue-400 text-sm uppercase tracking-wider">
+              Contact
+            </h3>
+
             <div className="space-y-4 text-sm">
 
               <a
                 href="mailto:contact@clearformstudio.in"
-                className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
+                className="flex items-center gap-3 text-gray-400 hover:text-white transition"
               >
-                <Mail size={16} />
+                <Mail size={16} className="text-blue-400" />
                 <span>contact@clearformstudio.in</span>
               </a>
 
               <a
                 href="tel:+917338495036"
-                className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
+                className="flex items-center gap-3 text-gray-400 hover:text-white transition"
               >
-                <Phone size={16} />
+                <Phone size={16} className="text-blue-400" />
                 <span>+91 73384 95036</span>
               </a>
 
@@ -109,22 +118,22 @@ export default function Footer() {
                 href="https://wa.me/917338495036"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors"
+                className="flex items-center gap-3 text-gray-400 hover:text-green-400 transition"
               >
-                <MessageCircle size={16} />
+                <MessageCircle size={16} className="text-green-400" />
                 <span>Chat on WhatsApp</span>
               </a>
             </div>
           </div>
         </div>
 
-        {/* BOTTOM BAR */}
-        <div className="border-t border-slate-700 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm text-center md:text-left">
+        {/* BOTTOM STRIP */}
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-gray-500 text-sm text-center md:text-left">
             © {currentYear} Clearform Studio. All rights reserved.
           </p>
-          <p className="text-slate-500 text-sm">
-            Designed to win marks & clients.
+          <p className="text-gray-500 text-sm">
+            Built for clarity. Designed for decisions.
           </p>
         </div>
 

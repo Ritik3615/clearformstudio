@@ -1,106 +1,113 @@
-import React from 'react';
-import { Mail, Phone, MessageSquare, ArrowRight } from 'lucide-react';
-import PageHeader from '../components/layout/PageHeader';
-import ContactFormComponent from '../components/forms/ContactForm';
+import React from "react";
+import { Mail, Phone, MessageSquare } from "lucide-react";
+import ContactFormComponent from "../components/forms/ContactForm";
 
 export default function ContactPage() {
   const contactMethods = [
     {
-      icon: <Mail className="text-blue-600" size={24} />,
-      title: "Email Us",
-      value: "contact@clearformstudio.in",
-      link: "mailto:contact@clearformstudio.in",
-      desc: "For project inquiries and collaborations."
+      icon: <Mail size={20} />,
+      title: "Email",
+      value: "ritik.kumar.codes@gmail.com",
+      link: "mailto:ritik.kumar.codes@gmail.com",
+      desc: "For job opportunities and collaborations.",
     },
     {
-      icon: <Phone className="text-blue-600" size={24} />,
-      title: "Call Us",
+      icon: <Phone size={20} />,
+      title: "Phone",
       value: "+91 7338495036",
       link: "tel:+917338495036",
-      desc: "Mon-Fri from 9am to 6pm IST."
+      desc: "Available for discussion (Bangalore).",
     },
     {
-      icon: <MessageSquare className="text-green-600" size={24} />,
+      icon: <MessageSquare size={20} />,
       title: "WhatsApp",
-      value: "Chat with us",
+      value: "Quick Chat",
       link: "https://wa.me/917338495036",
-      desc: "Fastest for quick questions."
-    }
+      desc: "Fastest way to reach me.",
+    },
   ];
 
   return (
-    <div className="min-h-screen pt-28 pb-20 bg-white">
-      {/* FULL WIDTH HERO SECTION */}
-      <section className="w-full bg-slate-50 border-b border-slate-200 py-24 mb-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <PageHeader 
-            title="Let’s Win Your Next Decision" 
-            subtitle="Share your project details and we’ll help you build a communication system that works."
-          />
-        </div>
-      </section>
+    <div className="relative min-h-screen pt-28 pb-20 text-white overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
-          
-          {/* LEFT SIDE: CONTACT INFO (FULL WIDTH STYLE) */}
-          <div className="lg:col-span-5 space-y-12">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#020617]" />
+      <div className="absolute top-[-120px] left-[-120px] w-[400px] h-[400px] bg-blue-600/20 rounded-full blur-[140px]" />
+      <div className="absolute bottom-[-150px] right-[-120px] w-[450px] h-[450px] bg-purple-600/20 rounded-full blur-[160px]" />
+
+      <div className="relative max-w-6xl mx-auto px-6">
+
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-6">
+            Get In Touch
+          </h1>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Open to backend-focused full stack roles, collaborations, and challenging engineering projects.
+          </p>
+        </div>
+
+        {/* Layout */}
+        <div className="grid lg:grid-cols-12 gap-12">
+
+          {/* LEFT SIDE */}
+          <div className="lg:col-span-5 space-y-10">
             <div>
-              <h2 className="text-4xl font-bold text-slate-900 mb-6 tracking-tight">Contact Information</h2>
-              <p className="text-xl text-slate-500 leading-relaxed">
-                Whether you need a full pitch deck or a structured proposal template, we're here to help.
+              <h2 className="text-2xl font-semibold mb-4">
+                Contact Information
+              </h2>
+              <p className="text-gray-400">
+                Whether you're hiring, collaborating, or want to discuss a technical problem — feel free to reach out.
               </p>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               {contactMethods.map((method, idx) => (
-                <a 
-                  key={idx} 
+                <a
+                  key={idx}
                   href={method.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-start gap-6 p-6 rounded-2xl border border-slate-100 hover:border-slate-300 hover:bg-slate-50 transition-all"
+                  className="flex items-start gap-4 bg-gray-800/70 backdrop-blur-sm p-5 rounded-xl border border-gray-700 hover:border-blue-500 transition"
                 >
-                  <div className="p-3 bg-white rounded-xl shadow-sm border border-slate-100 group-hover:scale-110 transition-transform">
+                  <div className="text-blue-400 mt-1">
                     {method.icon}
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-lg">{method.title}</h3>
-                    <p className="text-blue-600 font-medium mb-1">{method.value}</p>
-                    <p className="text-sm text-slate-500">{method.desc}</p>
+                    <h3 className="font-semibold text-white">
+                      {method.title}
+                    </h3>
+                    <p className="text-blue-400 text-sm">
+                      {method.value}
+                    </p>
+                    <p className="text-gray-400 text-xs">
+                      {method.desc}
+                    </p>
                   </div>
                 </a>
               ))}
             </div>
           </div>
 
-          {/* RIGHT SIDE: CONTACT FORM */}
+          {/* RIGHT SIDE FORM */}
           <div className="lg:col-span-7">
-            <div className="bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-slate-200/40">
-              <div className="mb-10">
-                <h2 className="text-3xl font-bold text-slate-900 mb-2">Send a Message</h2>
-                <p className="text-slate-500 italic">Expected response time: within 24 hours.</p>
+            <div className="bg-gray-800/70 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 shadow-lg">
+              <div className="mb-8">
+                <h2 className="text-2xl font-semibold mb-2">
+                  Send a Message
+                </h2>
+                <p className="text-gray-400 text-sm">
+                  I typically respond within 24 hours.
+                </p>
               </div>
-              
+
               <ContactFormComponent />
             </div>
           </div>
 
         </div>
+
       </div>
-      
-      {/* OPTIONAL BOTTOM FULL-WIDTH CTA */}
-      <section className="mt-32 mx-6 lg:mx-12 py-16 bg-slate-900 rounded-[3rem] text-center text-white overflow-hidden relative">
-        <div className="relative z-10">
-          <h3 className="text-3xl font-bold mb-4">Looking for our portfolio?</h3>
-          <p className="text-slate-400 mb-8 max-w-xl mx-auto">See how we've helped architecture firms and startups communicate clearly.</p>
-          <a href="/samples" className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 px-8 py-4 rounded-full font-bold transition-all">
-            View Selected Work <ArrowRight size={18} />
-          </a>
-        </div>
-        {/* Subtle background glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-500/10 blur-[120px]" />
-      </section>
     </div>
   );
 }

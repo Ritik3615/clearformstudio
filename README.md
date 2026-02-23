@@ -23,7 +23,7 @@ src/
 ├── components/              # Reusable React components
 │   ├── cards/              # Card components (Service, Pricing, Audience, Contact, ProcessStep)
 │   ├── forms/              # Form components (ContactForm)
-│   ├── layout/             # Layout components (PageHeader)
+│   ├── layout/             # Layout components (now empty – headers are defined per page)
 │   ├── ui/                 # UI primitives (Button, Card, Input, Label, Select, Separator, Textarea)
 │   ├── Navbar.jsx          # Navigation component
 │   └── Footer.jsx          # Footer component

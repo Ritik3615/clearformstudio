@@ -111,11 +111,11 @@ export default function Footer() {
                 className="flex items-center gap-3 text-gray-400 hover:text-white transition"
               >
                 <Phone size={16} className="text-blue-400" />
-                <span>+91 73384 95036</span>
+                <span>+91 9053407091</span>
               </a>
 
               <a
-                href="https://wa.me/917338495036"
+                href="https://wa.me/919053407091"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-gray-400 hover:text-green-400 transition"

@@ -7,22 +7,22 @@ export default function ContactPage() {
     {
       icon: <Mail size={20} />,
       title: "Email",
-      value: "ritik.kumar.codes@gmail.com",
-      link: "mailto:ritik.kumar.codes@gmail.com",
+      value: "contact@clearformstudio.in",
+      link: "mailto:contact@clearformstudio.in",
       desc: "For job opportunities and collaborations.",
     },
     {
       icon: <Phone size={20} />,
       title: "Phone",
-      value: "+91 7338495036",
-      link: "tel:+917338495036",
+      value: "+91 9053407091",
+      link: "tel:+919053407091",
       desc: "Available for discussion (Bangalore).",
     },
     {
       icon: <MessageSquare size={20} />,
       title: "WhatsApp",
       value: "Quick Chat",
-      link: "https://wa.me/917338495036",
+      link: "https://wa.me/919053407091",
       desc: "Fastest way to reach me.",
     },
   ];

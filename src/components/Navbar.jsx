@@ -44,9 +44,9 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden md:block">
-            <Link to="/contact">
-              <button className="px-6 py-2 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 transition">
-                Get Started
+            <Link to="/login">
+              <button className="px-6 cursor-pointer py-2 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 transition">
+                Login
               </button>
             </Link>
           </div>
@@ -77,7 +77,7 @@ export default function Navbar() {
             )}
             <Link to="/contact" onClick={() => setIsOpen(false)}>
               <button className="w-full mt-3 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 transition">
-                Get Started
+                Login
               </button>
             </Link>
           </div>
